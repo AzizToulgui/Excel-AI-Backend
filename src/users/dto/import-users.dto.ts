@@ -3,10 +3,10 @@ import { Type } from 'class-transformer';
 
 export class SpreadsheetRowDto {
   @IsNotEmpty()
-  name: string;
+  name?: string;
 
   @IsNotEmpty()
-  email: string;
+  email?: string;
 
   phone?: string;
   city?: string;
@@ -25,5 +25,5 @@ export class ImportUsersDto {
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => SpreadsheetRowDto)
-  rows: SpreadsheetRowDto[];
+  rows?: SpreadsheetRowDto[];
 }

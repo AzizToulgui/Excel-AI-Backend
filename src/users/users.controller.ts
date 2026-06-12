@@ -10,6 +10,7 @@ import {
 import { UsersService } from './users.service';
 import { ImportUsersDto } from './dto/import-users.dto';
 import { PaginationDto } from './dto/pagination.dto';
+import { ChatDto } from './dto/chat.dto';
 
 @Controller('users')
 export class UsersController {
@@ -24,6 +25,10 @@ export class UsersController {
   @HttpCode(201)
   async importUsers(@Body() importUsersDto: ImportUsersDto) {
     return this.usersService.importUsers(importUsersDto);
+  }
+  @Post('chat')
+  async chat(@Body() chatDto: ChatDto) {
+    return this.usersService.chatWithData(chatDto);
   }
 
   @Delete()
