@@ -13,5 +13,6 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   entities: [__dirname + '/../**/*.entity{.ts,.js}'],
   synchronize: true,
   logging: true,
+  logger: 'advanced-console',
   ssl: process.env.DB_SSL === 'true',
 };
